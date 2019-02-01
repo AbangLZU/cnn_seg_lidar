@@ -1,0 +1,45 @@
+<!-- -->
+<launch>
+  <arg name="network_definition_file" default="$(find lidar_cnn_seg_detect)/models/model.prototxt"/>
+  <arg name="pretrained_model_file" default="$(find lidar_cnn_seg_detect)/models/model.caffemodel"/>
+  <arg name="points_src" default="/points_raw" />
+  <arg name="score_threshold" default="0.6" />
+  <arg name="use_gpu" default="true" />
+  <arg name="gpu_device_id" default="0" />
+
+  <!-- <arg name="width" default="512" />
+  <arg name="height" default="512" /> -->
+  <arg name="width" default="672" />
+  <arg name="height" default="672" />
+  <!-- original 60 m -->
+  <arg name="range" default="150" />  
+  <arg name="use_constant_feature" default="false"/>
+
+  <arg name="min_distance" default="2.5"/>
+  <arg name="max_distance" default="150.0"/>
+  <arg name="clip_height" default="120.0"/>
+
+  <arg name="rviz_config" default="$(find lidar_cnn_seg_detect)/rviz_config/lidar_detect.rviz"/>
+  <!-- rviz配置文件 -->
+
+  <node pkg="lidar_cnn_seg_detect" type="lidar_cnn_seg_detect" name="lidar_cnn_seg_detect_01" output="screen">
+    <param name="network_definition_file" value="$(arg network_definition_file)" />
+    <param name="pretrained_model_file" value="$(arg pretrained_model_file)" />
+    <param name="points_src" value="$(arg points_src)" />
+    <param name="score_threshold" value="$(arg score_threshold)" />
+    <param name="use_gpu" value="$(arg use_gpu)" />
+    <param name="gpu_device_id" value="$(arg gpu_device_id)" />
+
+    <param name="height" value="$(arg height)" />
+    <param name="width" value="$(arg width)" />
+    <param name="range" value="$(arg range)" />
+    <param name="use_constant_feature" value="$(arg use_constant_feature)" />
+
+    <param name="min_distance" value="$(arg min_distance)" />
+    <param name="max_distance" value="$(arg max_distance)" />
+    <param name="clip_height" value="$(arg clip_height)" />
+  </node>
+
+  <node name="modelvisualisation" pkg="rviz" type="rviz" output="screen" args="-d $(arg     rviz_config)" />
+
+</launch>

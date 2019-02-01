@@ -1,0 +1,2 @@
+roslaunch lidar_cnn_seg_detect lidar_cnn_seg_detect.launch points_src:=/velodyne_points
+

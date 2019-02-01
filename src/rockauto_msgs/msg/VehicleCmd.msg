@@ -1,0 +1,10 @@
+Header header
+rockauto_msgs/SteerCmd steer_cmd
+rockauto_msgs/AccelCmd accel_cmd
+rockauto_msgs/BrakeCmd brake_cmd
+rockauto_msgs/LampCmd lamp_cmd
+int32 gear
+int32 mode
+geometry_msgs/TwistStamped twist_cmd
+rockauto_msgs/ControlCommand ctrl_cmd
+int32 emergency

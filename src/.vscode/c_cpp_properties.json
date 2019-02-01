@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/adam/data/paper_exp/fcn/catkin_ws/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/adam/data/paper_exp/fcn/catkin_ws/src/common/libs/amathutils_lib/include",
+                "/home/adam/data/paper_exp/fcn/catkin_ws/src/lidar_cnn_seg_detect/include",
+                "/home/adam/data/paper_exp/fcn/catkin_ws/src/common/libs/state_machine_lib/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}

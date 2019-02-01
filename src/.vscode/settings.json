@@ -1,0 +1,10 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/adam/data/paper_exp/fcn/catkin_ws/devel/lib/python2.7/dist-packages",
+        "/opt/ros/kinetic/lib/python2.7/dist-packages"
+    ],
+    "files.associations": {
+        "initializer_list": "cpp",
+        "*.ipp": "cpp"
+    }
+}
