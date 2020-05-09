@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 find_package(CUDA)
 find_package(OpenCV REQUIRED)
+# find_package(Caffe REQUIRED)
 
 catkin_package(
         INCLUDE_DIRS
@@ -35,8 +36,48 @@ IF (CUDA_FOUND)
         link_directories(/usr/lib/arm-linux-gnueabihf/tegra)
     endif ()
 ENDIF ()
+
+# if (Caffe_FOUND)
+#         include_directories(
+#                 include
+#                 ${catkin_INCLUDE_DIRS}
+#                 ${OpenCV_INCLUDE_DIRS}
+#                 ${Caffe_INCLUDE_DIRS}
+#         )
+
+#         add_executable(lidar_cnn_seg_detect
+#                 nodes/lidar_cnn_seg_detect_node.cpp
+#                 nodes/cnn_segmentation.cpp
+#                 nodes/cluster2d.cpp
+#                 nodes/feature_generator.cpp
+#                 )
+#         target_link_libraries(lidar_cnn_seg_detect
+#                 ${catkin_LIBRARIES}
+#                 ${OpenCV_LIBRARIES}
+#                 ${CUDA_LIBRARIES}
+#                 ${CUDA_CUBLAS_LIBRARIES}
+#                 ${CUDA_curand_LIBRARY}
+#                 ${Caffe_LIBRARIES}
+#                 glog
+#                 )
+#         add_dependencies(lidar_cnn_seg_detect
+#                 ${catkin_EXPORTED_TARGETS}
+#                 )
+
+#         install(TARGETS
+#                 lidar_cnn_seg_detect
+#                 ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#                 LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#                 RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
+#                 )
+# else ()
+#     message("'Caffe' is not installed. 'lidar_cnn_seg_detect' will not be built.")
+# endif ()
+
+
 ###CAFFE
 set(CAFFE_PATH "$ENV{HOME}/caffe/distribute")
+
 
 if (EXISTS "${CAFFE_PATH}")
 

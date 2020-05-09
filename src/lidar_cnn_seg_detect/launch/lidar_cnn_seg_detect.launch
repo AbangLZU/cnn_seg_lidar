@@ -1,23 +1,29 @@
 <!-- -->
 <launch>
-  <arg name="network_definition_file" default="$(find lidar_cnn_seg_detect)/models/model.prototxt"/>
-  <arg name="pretrained_model_file" default="$(find lidar_cnn_seg_detect)/models/model.caffemodel"/>
-  <arg name="points_src" default="/points_raw" />
-  <arg name="score_threshold" default="0.6" />
+  <!-- <arg name="network_definition_file" default="$(find lidar_cnn_seg_detect)/models/model.prototxt"/>
+  <arg name="pretrained_model_file" default="$(find lidar_cnn_seg_detect)/models/model.caffemodel"/> -->
+
+  <!-- <arg name="network_definition_file" default="$(find lidar_cnn_seg_detect)/models/velodyne64/deploy.prototxt"/>
+  <arg name="pretrained_model_file" default="$(find lidar_cnn_seg_detect)/models/velodyne64/deploy.caffemodel"/> -->
+
+  <arg name="network_definition_file" default="$(find lidar_cnn_seg_detect)/models/velodyne16/deploy.prototxt"/>
+  <arg name="pretrained_model_file" default="$(find lidar_cnn_seg_detect)/models/velodyne16/deploy.caffemodel"/>
+
+  <arg name="points_src" default="/kitti/velo/pointcloud" />
+  <arg name="score_threshold" default="0.2" />
   <arg name="use_gpu" default="true" />
   <arg name="gpu_device_id" default="0" />
 
-  <!-- <arg name="width" default="512" />
-  <arg name="height" default="512" /> -->
+
   <arg name="width" default="672" />
   <arg name="height" default="672" />
   <!-- original 60 m -->
-  <arg name="range" default="150" />  
+  <arg name="range" default="70" />  
   <arg name="use_constant_feature" default="false"/>
 
-  <arg name="min_distance" default="2.5"/>
-  <arg name="max_distance" default="150.0"/>
-  <arg name="clip_height" default="120.0"/>
+  <arg name="min_distance" default="3.0"/>
+  <arg name="max_distance" default="70.0"/>
+  <arg name="clip_height" default="5.0"/>
 
   <arg name="rviz_config" default="$(find lidar_cnn_seg_detect)/rviz_config/lidar_detect.rviz"/>
   <!-- rviz配置文件 -->

@@ -223,10 +223,10 @@ void CNNSegmentation::pointsCallback(const sensor_msgs::PointCloud2 &msg)
   objects.header = message_header_;
   segment(in_pc_ptr, valid_idx, objects);
   
-  segDetected(objects, in_pc_ptr);
+  // segDetected(objects, in_pc_ptr);
 
-  // pubColoredPoints(objects);
-  // objects_pub_.publish(objects);
+  pubColoredPoints(objects);
+  objects_pub_.publish(objects);
 
   end = std::chrono::system_clock::now();
   double elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
