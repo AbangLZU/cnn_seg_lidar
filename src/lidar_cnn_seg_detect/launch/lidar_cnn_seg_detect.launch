@@ -46,6 +46,7 @@
     <param name="clip_height" value="$(arg clip_height)" />
   </node>
 
-  <node name="modelvisualisation" pkg="rviz" type="rviz" output="screen" args="-d $(arg     rviz_config)" />
+  <node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="cluster_detect_visualization_01"
+          output="screen" ns="/detection/lidar_detector" />
 
 </launch>
