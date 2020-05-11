@@ -3,6 +3,8 @@
 
 This project use the CNN-Seg model from Baidu Apollo Project. And make it running in ROS.
 
+![](images/cnn_seg.gif)
+
 ### Dependence
 * Ubuntu 16.04
 * ROS kinetic
@@ -81,5 +83,5 @@ catkin build
 ### Run this project
 ```
 source devel/setup.bash
-./run_cnn_seg.sh
+roslaunch lidar_cnn_seg_detect lidar_cnn_seg_detect.launch 
 ```

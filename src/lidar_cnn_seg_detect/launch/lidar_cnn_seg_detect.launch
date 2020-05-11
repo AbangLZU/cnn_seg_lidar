@@ -3,14 +3,14 @@
   <!-- <arg name="network_definition_file" default="$(find lidar_cnn_seg_detect)/models/model.prototxt"/>
   <arg name="pretrained_model_file" default="$(find lidar_cnn_seg_detect)/models/model.caffemodel"/> -->
 
-  <!-- <arg name="network_definition_file" default="$(find lidar_cnn_seg_detect)/models/velodyne64/deploy.prototxt"/>
-  <arg name="pretrained_model_file" default="$(find lidar_cnn_seg_detect)/models/velodyne64/deploy.caffemodel"/> -->
+  <arg name="network_definition_file" default="$(find lidar_cnn_seg_detect)/models/velodyne64/deploy.prototxt"/>
+  <arg name="pretrained_model_file" default="$(find lidar_cnn_seg_detect)/models/velodyne64/deploy.caffemodel"/>
 
-  <arg name="network_definition_file" default="$(find lidar_cnn_seg_detect)/models/velodyne16/deploy.prototxt"/>
-  <arg name="pretrained_model_file" default="$(find lidar_cnn_seg_detect)/models/velodyne16/deploy.caffemodel"/>
+  <!-- <arg name="network_definition_file" default="$(find lidar_cnn_seg_detect)/models/velodyne16/deploy.prototxt"/>
+  <arg name="pretrained_model_file" default="$(find lidar_cnn_seg_detect)/models/velodyne16/deploy.caffemodel"/> -->
 
   <arg name="points_src" default="/kitti/velo/pointcloud" />
-  <arg name="score_threshold" default="0.2" />
+  <arg name="score_threshold" default="0.4" />
   <arg name="use_gpu" default="true" />
   <arg name="gpu_device_id" default="0" />
 
